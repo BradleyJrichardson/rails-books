@@ -1,13 +1,20 @@
-<h1>My Books</h1>
-<%= link_to "Create", new_book_path %>
-<div class="book-list">
-<% @books.each do |book| %>
-  <div>
-      <h2><%= book.title %></h2>
-      <h3><%= book.author %></h3>
-        <a href="/books/<%= book.id %>">
-          Details >
+<br>
+<div class="d-flex flex-wrap">
+  <% @books.each do |book| %>
+    <div class="card m-2" style="width: 21.5rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= book.title %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= book.author %></h6>
+        <p class="card-text"> 
+        <%= book.description %>
+        </p>
+        <a href="/books/<%= book.id %>" class="card-link">
+            <i class="fas fa-book"></i>
         </a>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
+
+
+
